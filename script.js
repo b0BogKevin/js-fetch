@@ -16,14 +16,14 @@ function kereses(params) {
 
 function kiiras(user) {
     let ki = ""
-    ki+=(user.login.uuid +"\n<br>")
-    ki+=(user.firstname +"\n<br>")
+    ki+=("id: " + user.id +"\n<br>")
+    ki+=("Teljes név: " + user.firstname + " ")
     ki+=(user.lastname +"\n<br>")
-    ki+=(user.phone +"\n<br>")
-    ki+=(user.email +"\n<br>")
-    ki+=(user.address.geo.lat + " " + user.address.geo.lng +"\n<br>")
-    ki+=(user.website +"\n<br>")
-    ki+=(user.company.name +"\n<br>")
+    ki+=("tel. szám: " + user.phone +"\n<br>")
+    ki+=("email: " + user.email +"\n<br>")
+    ki+=("geolokációs adatok: " + user.address.geo.lat + " " + user.address.geo.lng +"\n<br>")
+    ki+=("weboldal: " + user.website +"\n<br>")
+    ki+=("cégnév: " + user.company.name +"\n<br>")
 
 console.log(ki)
 document.getElementById("adatok").innerHTML=ki
