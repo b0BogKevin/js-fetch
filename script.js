@@ -7,7 +7,8 @@ function kereses(params) {
       kiiras(user)
     })
     .catch(error => {
-      console.error('There was a problem with the fetch operation:', error);
+document.getElementById("adatok").innerHTML="1 és 30 között adja meg a számot!"
+      
     });
   
 }
@@ -15,18 +16,29 @@ function kereses(params) {
 
 
 function kiiras(user) {
-    let ki = ""
-    ki+=("id: " + user.id +"\n<br>")
-    ki+=("Teljes név: " + user.firstname + " ")
-    ki+=(user.lastname +"\n<br>")
-    ki+=("tel. szám: " + user.phone +"\n<br>")
-    ki+=("email: " + user.email +"\n<br>")
-    ki+=("geolokációs adatok: " + user.address.geo.lat + " " + user.address.geo.lng +"\n<br>")
-    ki+=("weboldal: " + user.website +"\n<br>")
-    ki+=("cégnév: " + user.company.name +"\n<br>")
-
+    let ki = document.getElementById("adatok")
+    ki.innerHTML = "";
+    ki.innerHTML+=("<div>id: " + user.id +"\n</div>")
+    setTimeout(() => {
+      ki.innerHTML+=("<div>Teljes név: " + user.firstname + " " + user.lastname +"\n</div>")
+    setTimeout(() => {
+      ki.innerHTML+=("<div>tel. szám: " + user.phone +"\n</div>")
+      setTimeout(() => {
+    ki.innerHTML+=("<div>email: " + user.email +"\n</div>")
+      setTimeout(() => {
+    ki.innerHTML+=("<div>geolokációs adatok: " + user.address.geo.lat + " " + user.address.geo.lng +"\n</div>")
+        setTimeout(() => {
+    ki.innerHTML+=("<div>weboldal: " + user.website +"\n</div>")
+          setTimeout(() => {
+    ki.innerHTML+=("<div>cégnév: " + user.company.name +"\n</div>")
+            }, 50);
+          }, 50);
+        }, 50);
+      }, 50);
+    }, 50);
+    }, 50);
+    document.getElementById("lab").style.display="none";
 console.log(ki)
-document.getElementById("adatok").innerHTML=ki
-
-
+ki.style.height = "182px"
+ki.style.width = "319px"
 }
